@@ -95,6 +95,35 @@ hela den ursprungliga specen.
 4. Lägg till versionshantering (gammal/ny lydelse) enligt den
    ursprungliga specifikationen, punkt 7.
 
+## Kvalitetskontroll av källunderlaget
+
+`scripts/test-retrieval.ts` innehåller tio medvetet blandade testfrågor —
+fem som ska ge svar och fem som medvetet ligger utanför pilotens två
+kapitel och ska ge "jag hittar inte tillräckligt stöd…". Kör det med:
+
+```
+npx tsx scripts/test-retrieval.ts
+```
+
+Nuvarande resultat: **9 av 10** ger förväntat utfall. Den återstående är
+ett genuint gråzonsfall, inte en bugg: frågan "Vad räknas som farligt
+avfall?" plockar upp 2 kap. 5 § (som verkligen nämner avfall — den
+allmänna hushållningsprincipen om att minska och återvinna avfall) men
+kan inte ge den specifika definitionen av "farligt avfall", som finns i
+15 kap. (inte inlagt än). Sökningen skickar alltså paragrafen till AI:n,
+och det är då AI-promptens regel — "om underlaget inte räcker, säg det
+uttryckligen och ange vad som saknas" — som är den sista spärren mot ett
+missvisande svar, inte sökningen i sig. Jag har inte kunnat testa den
+delen live eftersom jag inte har en Gemini-nyckel i den här miljön. **Du
+bör testa just den frågan (och gärna fler gränsfall) själv innan du
+visar verktyget för Miljöverket**, och höja `minPoang`/`relativTroskel`
+i `lib/retrieval.ts` ytterligare om AI:n svarar för säkert på ett sådant
+gränsfall istället för att flagga att definitionen saknas.
+
+Lägg till fler testfall i samma fil varje gång ni lägger till ett nytt
+kapitel — det är den enda verkliga garantin mot att sökningen tyst
+försämras när datamängden växer.
+
 ## Viktigt om gränser
 
 Gemini gratis-tier har hastighetsgränser (ca 10–15 anrop/minut). Det

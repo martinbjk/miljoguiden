@@ -20,7 +20,7 @@ export async function fragaGemini(prompt: string, retries = 3): Promise<string> 
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: {
           temperature: 0.1,
-          maxOutputTokens: 1024,
+          maxOutputTokens: 4096,
         },
       }),
     });

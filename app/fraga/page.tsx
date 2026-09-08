@@ -7,10 +7,23 @@ type Svar = { svar: string; kallor: Kalla[]; osaker: boolean };
 
 const EXEMPEL = [
   "Vi använder lösningsmedel i vår verkstad — vad behöver vi tänka på?",
-  "Vad innebär försiktighetsprincipen i praktiken?",
+  "Vad innebär försiktighetsprincipen i practical?",
   "Måste vi välja en mindre farlig kemikalie om ett alternativ finns?",
   "Vad är miljöbalkens övergripande syfte?",
 ];
+
+function skapaRiksdagenUrl(kalla: Kalla): string {
+  const kapitelMatch = kalla.referens.match(/(\d+)\s*kap/i);
+  const paragrafMatch = kalla.referens.match(/(\d+)\s*§/);
+
+  if (kapitelMatch && paragrafMatch) {
+    const kapitel = kapitelMatch[1];
+    const paragraf = paragrafMatch[1];
+    return `https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/miljobalk-1998808_sfs-1998-808/#K${kapitel}P${paragraf}`;
+  }
+
+  return kalla.url;
+}
 
 export default function FragaPage() {
   const [fraga, setFraga] = useState("");
@@ -49,7 +62,7 @@ export default function FragaPage() {
         <h1>Fråga MiljöGuiden</h1>
         <p className="lede">
           Skriv din fråga med vanlig svenska. Svaret bygger uteslutande på
-          lagtexten i pilotmängden (1 kap. 1 § och 2 kap. Miljöbalken) —
+          lagtexten i pilotmängden (1, 2 och 9 kap. Miljöbalken) —
           MiljöGuiden hittar aldrig på paragrafer eller källor.
         </p>
       </section>
@@ -102,7 +115,7 @@ export default function FragaPage() {
                     Källor:{" "}
                     {resultat.kallor.map((k, i) => (
                       <span key={k.referens}>
-                        <a href={k.url} target="_blank" rel="noreferrer">
+                        <a href={skapaRiksdagenUrl(k)} target="_blank" rel="noreferrer">
                           {k.referens} — {k.rubrik}
                         </a>
                         {i < resultat.kallor.length - 1 ? " · " : ""}

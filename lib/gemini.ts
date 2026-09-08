@@ -1,7 +1,7 @@
 // Anropar Google Gemini (gratis-tier, Flash-modell) från servern.
 // Kräver miljövariabeln GEMINI_API_KEY (se README för hur du skaffar en gratis nyckel).
 
-const GEMINI_MODEL = "gemini-1.5-flash";
+const GEMINI_MODEL = "gemini-2.0-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 export async function fragaGemini(prompt: string): Promise<string> {

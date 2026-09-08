@@ -20,7 +20,7 @@ export async function fragaGemini(prompt: string, retries = 3): Promise<string> 
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: {
           temperature: 0.1,
-          maxOutputTokens: 4096,
+          maxOutputTokens: 800, // Optimerat för snabbare respons utan avhugg
         },
       }),
     });
@@ -30,9 +30,8 @@ export async function fragaGemini(prompt: string, retries = 3): Promise<string> 
       return data.candidates?.[0]?.content?.parts?.[0]?.text || "";
     }
 
-    // Om det är 503 (överbelastning), vänta 2 sekunder och försök igen
     if (res.status === 503 && i < retries - 1) {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
       continue;
     }
 

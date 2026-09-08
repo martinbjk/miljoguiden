@@ -118,14 +118,13 @@ export const PARAGRAFER: Paragraf[] = [
     paragraf: "10 §",
     text: "Om en verksamhet eller åtgärd är av synnerlig betydelse från allmän synpunkt kan regeringen tillåta denna, även om förutsättningarna är sådana som anges i 9 § andra stycket.\nDetta gäller dock inte om verksamheten eller åtgärden kan befaras försämra det allmänna hälsotillståndet.\n\nBeslut enligt första stycket får förenas med villkor för att tillgodose allmänna intressen.",
   },
-  {
+   {
     id: "9:1",
     kapitel: 9,
     paragraf: "1 §",
     kapitelRubrik: "9 kap. Miljöfarlig verksamhet och hälsoskydd",
     avsnittsrubrik: "Miljöfarlig verksamhet",
-    text: "Med miljöfarlig verksamhet avses: 1. utsläpp av avloppsvatten, fasta ämnen eller gas från mark, byggnader eller anläggningar i mark, vattenområden eller grundvatten, 2. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för omgivningen genom utsläpp till luft, mark eller vatten eller genom buller, skakningar, ljus, strålning eller annat sådant, eller 3. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för människors hälsa eller miljön genom annan påverkan än som avses i 1 eller 2.",
-    sokord: ["miljöfarlig verksamhet", "utsläpp", "avloppsvatten", "buller", "skakningar", "olägenhet"],
+    text: "Med miljöfarlig verksamhet avses: 1. utsläpp av avloppsvatten, fasta ämnen eller gas från mark, byggnader eller anläggningar i mark, vattenområden eller grundvatten, 2. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för omgivningen genom utsläpp till luft, mark eller vatten eller genom buller, skakningar, ljus, strålning eller annat sådant, eller 3. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för människors hälsa eller miljön genom annan påverkan än som avses i 1 eller 2."
   },
   {
     id: "9:2",
@@ -133,8 +132,7 @@ export const PARAGRAFER: Paragraf[] = [
     paragraf: "2 §",
     kapitelRubrik: "9 kap. Miljöfarlig verksamhet och hälsoskydd",
     avsnittsrubrik: "Hälsoskydd",
-    text: "Med hälsoskydd avses åtgärder för att förebygga och undanröja olägenheter för människors hälsa. Med olägenhet för människors hälsa avses en störning som enligt medicinsk eller hygienisk bedömning kan påverka hälsan menligt och som inte är ringa eller helt tillfällig.",
-    sokord: ["hälsoskydd", "olägenhet", "människors hälsa", "störning", "hygienisk"]
+    text: "Med hälsoskydd avses åtgärder för att förebygga och undanröja olägenheter för människors hälsa. Med olägenhet för människors hälsa avses en störning som enligt medicinsk eller hygienisk bedömning kan påverka hälsan menligt och som inte är ringa eller helt tillfällig."
   },
   {
     id: "9:6",
@@ -142,7 +140,6 @@ export const PARAGRAFER: Paragraf[] = [
     paragraf: "6 §",
     kapitelRubrik: "9 kap. Miljöfarlig verksamhet och hälsoskydd",
     avsnittsrubrik: "Tillstånd och anmälan",
-    text: "Regeringen får meddela föreskrifter om att det skall gälla förbud att utan tillstånd eller anmälan anlägga eller driva vissa slag av miljöfarliga verksamheter eller göra ändringar i dem. Regeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om att det krävs tillstånd eller anmälan för att inrätta eller driva vissa slag av avloppsanordningar.",
-    sokord: ["tillstånd", "anmälan", "tillståndsplikt", "anmälningsplikt", "avloppsanordning"]
+    text: "Regeringen får meddela föreskrifter om att det skall gälla förbud att utan tillstånd eller anmälan anlägga eller driva vissa slag av miljöfarliga verksamheter eller göra ändringar i dem. Regeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om att det krävs tillstånd eller anmälan för att inrätta eller driva vissa slag av avloppsanordningar."
   }
 ];

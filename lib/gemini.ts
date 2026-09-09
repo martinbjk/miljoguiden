@@ -1,10 +1,10 @@
 // Anropar Google Gemini (gratis-tier, Flash-modell) från servern.
 // Kräver miljövariabeln GEMINI_API_KEY (se README för hur du skaffar en gratis nyckel).
 
-const GEMINI_MODEL = "gemini-2.5-flash";
+const GEMINI_MODEL = "gemini-3.6-flash";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-export async function fragaGemini(prompt: string): Promise<string> {
+export async function fragaGemini(prompt: string, retries = 3): Promise<string> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error(
@@ -12,30 +12,32 @@ export async function fragaGemini(prompt: string): Promise<string> {
     );
   }
 
-  const res = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature: 0.1, // lågt — vi vill ha ett återhållsamt, källtroget svar
-        maxOutputTokens: 1024,
-      },
-    }),
-  });
+  for (let i = 0; i < retries; i++) {
+    const res = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.1,
+          maxOutputTokens: 2048,
+        },
+      }),
+    });
 
-  if (!res.ok) {
+    if (res.ok) {
+      const data = await res.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    }
+
+    if (res.status === 503 && i < retries - 1) {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      continue;
+    }
+
     const felText = await res.text();
     throw new Error(`Gemini-anropet misslyckades (${res.status}): ${felText}`);
   }
 
-  const data = await res.json();
-  const svar: string | undefined =
-    data?.candidates?.[0]?.content?.parts?.[0]?.text;
-
-  if (!svar) {
-    throw new Error("Gemini gav inget svar (kan bero på säkerhetsfilter eller kvotgräns).");
-  }
-
-  return svar;
+  throw new Error("Kunde inte ansluta till Gemini efter flera försök.");
 }

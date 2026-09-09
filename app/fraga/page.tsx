@@ -12,6 +12,19 @@ const EXEMPEL = [
   "Vad är miljöbalkens övergripande syfte?",
 ];
 
+function skapaRiksdagenUrl(kalla: Kalla): string {
+  const kapitelMatch = kalla.referens.match(/(\d+)\s*kap/i);
+  const paragrafMatch = kalla.referens.match(/(\d+)\s*§/);
+
+  if (kapitelMatch && paragrafMatch) {
+    const kapitel = kapitelMatch[1];
+    const paragraf = paragrafMatch[1];
+    return `https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/miljobalk-1998808_sfs-1998-808/#K${kapitel}P${paragraf}`;
+  }
+
+  return kalla.url;
+}
+
 export default function FragaPage() {
   const [fraga, setFraga] = useState("");
   const [laddar, setLaddar] = useState(false);
@@ -44,7 +57,7 @@ export default function FragaPage() {
 
   return (
     <>
-      <section className="hero">
+            <section className="hero">
         <p className="hero-kicker">AI-FRÅGA · GEMINI FLASH · KÄLLBEGRÄNSAD</p>
         <h1>Fråga MiljöGuiden</h1>
         <p className="lede">
@@ -103,7 +116,7 @@ export default function FragaPage() {
                     Källor:{" "}
                     {resultat.kallor.map((k, i) => (
                       <span key={k.referens}>
-                        <a href={k.url} target="_blank" rel="noreferrer">
+                        <a href={skapaRiksdagenUrl(k)} target="_blank" rel="noreferrer">
                           {k.referens} — {k.rubrik}
                         </a>
                         {i < resultat.kallor.length - 1 ? " · " : ""}

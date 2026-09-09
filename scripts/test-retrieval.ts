@@ -29,16 +29,26 @@ const TESTFALL: TestFall[] = [
     forvantat: "svar",
     kommentar: "Rimlighetsavvägning, 2 kap. 7 §",
   },
-  // --- Borde INTE ge svar (ligger utanför pilotens 2 kapitel) ---
   {
-    fraga: "Vilka regler gäller för oljeavskiljare i en bilverkstad?",
-    forvantat: "vet_inte",
-    kommentar: "Kräver 9 kap. (miljöfarlig verksamhet) — inte inlagt än",
+    fraga: "Vad räknas som miljöfarlig verksamhet enligt miljöbalken?",
+    forvantat: "svar",
+    kommentar: "Definition, 9 kap. 1 §",
+  },
+  {
+    fraga: "Krävs tillstånd eller anmälan för att driva miljöfarlig verksamhet?",
+    forvantat: "svar",
+    kommentar: "Tillstånds- och anmälningsplikt, 9 kap. 6 §",
   },
   {
     fraga: "Behöver vi anmäla eller söka tillstånd för vår verksamhet?",
+    forvantat: "svar",
+    kommentar: "Nu inom underlaget tack vare 9 kap. 6 § — flyttad hit från vet_inte-listan",
+  },
+  // --- Borde INTE ge svar (ligger utanför pilotens kapitel) ---
+  {
+    fraga: "Vilka regler gäller för oljeavskiljare i en bilverkstad?",
     forvantat: "vet_inte",
-    kommentar: "Tillstånds-/anmälningsplikt regleras i 9 kap. 6 §, inte 2 kap.",
+    kommentar: "Kräver förordningen om miljöfarlig verksamhet (SFS 1998:899), inte Miljöbalken själv",
   },
   {
     fraga: "Vad räknas som farligt avfall och hur ska det hanteras?",

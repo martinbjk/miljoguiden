@@ -95,7 +95,7 @@ export type Traff = { paragraf: Paragraf; poang: number };
 export function sokParagrafer(
   fraga: string,
   maxTraffar = 4,
-  minPoang = 2.5,
+  minPoang = 4.0,
   relativTroskel = 0.55
 ): Traff[] {
   const sokord = tokenisera(fraga);

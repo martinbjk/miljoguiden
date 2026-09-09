@@ -49,8 +49,9 @@ export default function FragaPage() {
         <h1>Fråga MiljöGuiden</h1>
         <p className="lede">
           Skriv din fråga med vanlig svenska. Svaret bygger uteslutande på
-          lagtexten i pilotmängden (1 kap. 1 § och 2 kap. Miljöbalken) —
-          MiljöGuiden hittar aldrig på paragrafer eller källor.
+          lagtexten i pilotmängden (1 kap. 1 §, 2 kap. samt 9 kap. 1, 2, 3
+          och 6 §§ Miljöbalken) — MiljöGuiden hittar aldrig på paragrafer
+          eller källor.
         </p>
       </section>
 

@@ -37,7 +37,8 @@ export default function RootLayout({
             MiljöGuiden Sverige är ett informations- och arbetsverktyg under
             utveckling. Informationen ersätter inte juridisk rådgivning,
             myndighetsbeslut eller kontroll av aktuell originalkälla.
-            Pilotversionen innehåller endast 1 kap. 1 § och 2 kap.
+            Pilotversionen innehåller endast 1 kap. 1 §, 2 kap. samt
+            9 kap. 1, 2, 3 och 6 §§.
             Miljöbalken (1998:808).
           </p>
         </footer>

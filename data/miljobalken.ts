@@ -118,28 +118,37 @@ export const PARAGRAFER: Paragraf[] = [
     paragraf: "10 §",
     text: "Om en verksamhet eller åtgärd är av synnerlig betydelse från allmän synpunkt kan regeringen tillåta denna, även om förutsättningarna är sådana som anges i 9 § andra stycket.\nDetta gäller dock inte om verksamheten eller åtgärden kan befaras försämra det allmänna hälsotillståndet.\n\nBeslut enligt första stycket får förenas med villkor för att tillgodose allmänna intressen.",
   },
-   {
+     {
     id: "9:1",
     kapitel: 9,
+    kapitelRubrik: "Miljöfarlig verksamhet och hälsoskydd",
     paragraf: "1 §",
-    kapitelRubrik: "9 kap. Miljöfarlig verksamhet och hälsoskydd",
-    avsnittsrubrik: "Miljöfarlig verksamhet",
-    text: "Med miljöfarlig verksamhet avses: 1. utsläpp av avloppsvatten, fasta ämnen eller gas från mark, byggnader eller anläggningar i mark, vattenområden eller grundvatten, 2. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för omgivningen genom utsläpp till luft, mark eller vatten eller genom buller, skakningar, ljus, strålning eller annat sådant, eller 3. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för människors hälsa eller miljön genom annan påverkan än som avses i 1 eller 2."
+    avsnittsrubrik: "Definition av miljöfarlig verksamhet",
+    text: "Med miljöfarlig verksamhet avses\n1. utsläpp av avloppsvatten, fasta ämnen eller gas från mark, byggnader eller anläggningar i mark, vattenområden eller grundvatten,\n2. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för människors hälsa eller miljön genom annat utsläpp än som avses i 1 eller genom förorening av mark, luft, vattenområden eller grundvatten, eller\n3. användning av mark, byggnader eller anläggningar på ett sätt som kan medföra olägenhet för omgivningen genom buller, skakningar, ljus, joniserande eller icke-joniserande strålning eller annat liknande.",
   },
   {
     id: "9:2",
     kapitel: 9,
+    kapitelRubrik: "Miljöfarlig verksamhet och hälsoskydd",
     paragraf: "2 §",
-    kapitelRubrik: "9 kap. Miljöfarlig verksamhet och hälsoskydd",
-    avsnittsrubrik: "Hälsoskydd",
-    text: "Med hälsoskydd avses åtgärder för att förebygga och undanröja olägenheter för människors hälsa. Med olägenhet för människors hälsa avses en störning som enligt medicinsk eller hygienisk bedömning kan påverka hälsan menligt och som inte är ringa eller helt tillfällig."
+    avsnittsrubrik: "Definition av avloppsvatten",
+    text: "Med avloppsvatten avses\n1. spillvatten eller annan flytande orenlighet,\n2. vatten som använts för kylning,\n3. vatten som avleds för sådan avvattning av mark inom detaljplan som inte görs för en viss eller vissa fastigheters räkning, eller\n4. vatten som avleds för avvattning av en begravningsplats.",
+  },
+  {
+    id: "9:3",
+    kapitel: 9,
+    kapitelRubrik: "Miljöfarlig verksamhet och hälsoskydd",
+    paragraf: "3 §",
+    avsnittsrubrik: "Definition av olägenhet för människors hälsa",
+    text: "Med olägenhet för människors hälsa avses störning som enligt medicinsk eller hygienisk bedömning kan påverka hälsan menligt och som inte är ringa eller helt tillfällig.",
   },
   {
     id: "9:6",
     kapitel: 9,
+    kapitelRubrik: "Miljöfarlig verksamhet och hälsoskydd",
     paragraf: "6 §",
-    kapitelRubrik: "9 kap. Miljöfarlig verksamhet och hälsoskydd",
-    avsnittsrubrik: "Tillstånd och anmälan",
-    text: "Regeringen får meddela föreskrifter om att det skall gälla förbud att utan tillstånd eller anmälan anlägga eller driva vissa slag av miljöfarliga verksamheter eller göra ändringar i dem. Regeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om att det krävs tillstånd eller anmälan för att inrätta eller driva vissa slag av avloppsanordningar."
-  }
+    avsnittsrubrik: "Tillstånds- och anmälningsplikt",
+    text: "Regeringen får meddela föreskrifter om att det ska vara förbjudet att utan tillstånd eller innan anmälan har gjorts\n1. anlägga eller driva vissa slag av fabriker, andra inrättningar eller annan miljöfarlig verksamhet,\n2. släppa ut avloppsvatten i mark, vattenområde eller grundvatten,\n3. släppa ut eller lägga upp fast avfall eller andra fasta ämnen, om detta kan leda till att mark, vattenområde eller grundvatten kan förorenas, eller\n4. bedriva sådan miljöfarlig verksamhet som avses i 1–3, om den ändras med avseende på tillverkningsprocess, reningsförfarande eller på något annat sätt.",
+    andringslag: "Lag (2012:907)",
+  },
 ];

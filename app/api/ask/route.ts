@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     if (traffar.length === 0) {
       return NextResponse.json({
         svar:
-          "Jag hittar inte tillräckligt stöd i de källor som hittills är inlagda (1 kap. 1 § och 2 kap. Miljöbalken) för att svara på den här frågan. Prova att formulera om frågan, eller vänta tills fler kapitel har lagts till.",
+          "Jag hittar inte tillräckligt stöd i de källor som hittills är inlagda (1 kap. 1 §, 2 kap. samt delar av 9 kap. Miljöbalken) för att svara på den här frågan. Prova att formulera om frågan, eller vänta tills fler kapitel har lagts till.",
         kallor: [],
         osaker: true,
       });
@@ -41,6 +41,7 @@ REGLER:
 - Varje sakpåstående ska kunna kopplas till en specifik paragraf i underlaget nedan. Ange paragrafen i formatet "(2 kap. 3 §)" direkt efter påståendet.
 - Om underlaget inte räcker för att besvara frågan fullt ut, säg det uttryckligen och ange vad som saknas. Gissa aldrig.
 - Presentera inte detta som en juridiskt bindande bedömning. Detta är vägledning, inte myndighetsbeslut.
+- Om en paragraf bara bemyndigar regeringen eller en myndighet att meddela föreskrifter (t.ex. "Regeringen får meddela föreskrifter om...") utan att själv räkna upp de konkreta kraven, säg uttryckligen att de detaljerade kraven fastställs i en förordning eller föreskrift som inte ingår i detta underlag, och att den behöver kontrolleras separat.
 - Var kortfattad och praktisk — sikta på 150-250 ord.
 
 UNDERLAG (utdrag ur ${KALLA.lag}, ${KALLA.andradTom}):
